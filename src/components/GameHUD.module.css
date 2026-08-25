@@ -1,7 +1,8 @@
 .hud {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  display: flex;
+  flex-wrap: nowrap;
   gap: var(--spacing-sm);
+  width: 100%;
 }
 
 .stat {
@@ -12,6 +13,8 @@
   display: flex;
   flex-direction: column;
   gap: 2px;
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 .label {
