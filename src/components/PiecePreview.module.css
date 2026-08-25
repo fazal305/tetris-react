@@ -1,0 +1,19 @@
+.preview,
+.empty {
+  display: grid;
+  grid-template-columns: repeat(var(--size), 1fr);
+  grid-template-rows: repeat(var(--size), 1fr);
+  gap: 2px;
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.dimmed {
+  opacity: 0.45;
+}
+
+.cell {
+  border-radius: 2px;
+  background: transparent;
+  border: 1px solid transparent;
+}

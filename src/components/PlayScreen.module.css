@@ -1,0 +1,122 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-md);
+  gap: var(--spacing-md);
+}
+
+.header {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerTitle {
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  margin: 0;
+  color: var(--color-accent);
+}
+
+.iconButton {
+  background: var(--color-panel);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xs) var(--spacing-md);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 140px minmax(0, 1fr) 140px;
+  gap: var(--spacing-md);
+  width: 100%;
+  max-width: 900px;
+  align-items: start;
+  position: relative;
+}
+
+.leftColumn,
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.centerColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+  position: relative;
+}
+
+.boardWrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.mobileStats {
+  display: none;
+}
+
+.clearBanner {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-accent);
+  color: var(--color-background);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  box-shadow: var(--shadow-md);
+  animation: bannerPop 260ms ease-out;
+  z-index: 5;
+  pointer-events: none;
+}
+
+@keyframes bannerPop {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(6px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clearBanner {
+    animation: none;
+  }
+}
+
+@media (max-width: 899px) {
+  .main {
+    grid-template-columns: 1fr 1fr;
+  }
+  .centerColumn {
+    grid-column: 1 / -1;
+    order: -1;
+  }
+  .leftColumn {
+    order: 1;
+  }
+  .rightColumn {
+    order: 2;
+  }
+}

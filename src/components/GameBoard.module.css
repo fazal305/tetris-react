@@ -1,0 +1,66 @@
+.board {
+  display: grid;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  grid-template-rows: repeat(var(--rows), 1fr);
+  gap: 1px;
+  background: var(--color-background);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  aspect-ratio: 1 / 2;
+  width: min(100%, 340px);
+  overflow: hidden;
+}
+
+.cell {
+  background: var(--color-surface);
+  border-radius: 2px;
+}
+
+.showGrid .cell {
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+}
+
+.filled {
+  border: 1px solid transparent;
+  border-radius: 3px;
+}
+
+.active {
+  animation: pop 90ms ease-out;
+}
+
+.ghost {
+  border-style: dashed;
+  background-clip: padding-box;
+}
+
+.clearing {
+  animation: flash 300ms ease-in-out;
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.85);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes flash {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(2.4);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .active,
+  .clearing {
+    animation: none;
+  }
+}

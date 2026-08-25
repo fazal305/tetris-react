@@ -1,0 +1,162 @@
+.screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-xl) var(--spacing-md);
+  gap: var(--spacing-lg);
+}
+
+.content {
+  width: min(100%, 480px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.header {
+  text-align: center;
+}
+
+.title {
+  font-size: 2.4rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  margin: 0;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-strong));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  color: var(--color-muted);
+  margin: var(--spacing-xs) 0 0;
+  font-size: 0.9rem;
+}
+
+.menuList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.menuButton {
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-panel);
+  color: var(--color-text);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-align: left;
+  cursor: pointer;
+  transition: transform var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.menuButton:hover {
+  border-color: var(--color-accent);
+  transform: translateX(2px);
+}
+
+.menuButtonPrimary {
+  composes: menuButton;
+  background: var(--color-accent);
+  border-color: var(--color-accent-strong);
+  color: var(--color-background);
+}
+
+.backButton {
+  align-self: flex-start;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-muted);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xs) var(--spacing-md);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.backButton:hover {
+  color: var(--color-text);
+  border-color: var(--color-accent);
+}
+
+.panel {
+  background: var(--color-panel);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md) var(--spacing-lg);
+}
+
+.sectionTitle {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin: 0 0 var(--spacing-md);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-sm) 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.9rem;
+  gap: var(--spacing-md);
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.toggle {
+  width: 44px;
+  height: 24px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  position: relative;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.toggle[aria-pressed='true'] {
+  background: var(--color-accent);
+  border-color: var(--color-accent-strong);
+}
+
+.toggleThumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-text);
+  transition: transform var(--transition-fast);
+}
+
+.toggle[aria-pressed='true'] .toggleThumb {
+  transform: translateX(20px);
+  background: var(--color-background);
+}
+
+.select {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  border-radius: var(--radius-sm);
+  padding: 4px 8px;
+  font-size: 0.85rem;
+}
+
+.emptyState {
+  text-align: center;
+  color: var(--color-muted);
+  padding: var(--spacing-xl) var(--spacing-md);
+  font-size: 0.9rem;
+}
