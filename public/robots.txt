@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tetris-react-nine.vercel.app/sitemap.xml
