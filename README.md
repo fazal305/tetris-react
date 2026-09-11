@@ -2,6 +2,10 @@
 
 A polished, offline-first Tetris built with React and Vite. The goal wasn't just "make Tetris work" — it's a demonstration of separating a real-time game simulation from React's rendering model, driving a `requestAnimationFrame` loop without fighting React's render cycle, and shipping a genuinely playable, accessible, persistent game.
 
+## Live Demo
+
+**[tetris-react-nine.vercel.app](https://tetris-react-nine.vercel.app)**
+
 ## Features
 
 - Standard 10×20 playfield with all seven tetrominoes (I, O, T, S, Z, J, L)
